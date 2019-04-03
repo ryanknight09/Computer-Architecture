@@ -1,0 +1,20 @@
+module andgate(a,b, out);
+input a,b;
+output out;
+
+    assign out = a & b;
+    
+    endmodule
+
+module TB;
+    reg a, b;
+    wire out;
+    
+    andgate myandgate(a,b,out);
+    
+    initial
+        begin 
+        a = 1; b = 0;
+    #1  $display("a=%b b=%b out=%b", a,b,out);
+    end
+    endmodule
